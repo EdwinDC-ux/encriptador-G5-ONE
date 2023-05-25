@@ -16,6 +16,10 @@
 
     <!-- Estilos principales -->
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Scripts -->
+    <script src="./assets/js/salidaVacia.js"></script>
+    <script src="./assets/js/encriptador.js"></script>
 </head>
 <body>
     <div class="contenedor">
@@ -28,7 +32,7 @@
             <div class="entradas">
                 <form class="codificador" id="codificador">
                     <fieldset class="codificador__texto">
-                        <textarea id="texto_usuario"placeholder="Ingrese el texto aquí"></textarea>
+                        <textarea id="texto_usuario"placeholder="Ingrese el texto aquí" required></textarea>
                     </fieldset>
                     <fieldset class="codificador__informacion">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,15 +46,7 @@
                     </fieldset>
                 </form>
             </div><!--Logo y formulario-->
-            <div class="resultado">
-                <div class="resultado__logo-pc">
-                    <img src="./assets/img/munieco.png" alt="logo pc sin resultados">
-                </div>
-                <div class="resultado__texto">
-                    <h2>Ningún mensaje fue encontrado</h2>
-                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-                </div>
-            </div><!--Resultado-->
+            <div class="resultado" id="salida"></div><!--Resultado-->
         </main>
         <footer>
             <div class="marquee">
