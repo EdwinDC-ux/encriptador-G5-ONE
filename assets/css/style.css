@@ -29,6 +29,7 @@ body {
     height: auto;
     background-color: var(--secundario);
     padding: 2.4rem 1.6rem 4rem;
+    overflow-x: hidden;
 }
 a {
     text-decoration: none;
@@ -142,6 +143,52 @@ header {
     margin-bottom: 1.6rem;
 }
 
+/** Footer **/
+footer {
+    text-align: center;
+}
+.marquee p {
+    color: var(--alternativo);
+    animation: scrolling 10s linear infinite
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-50vw);
+    }
+    46.9% {
+        visibility: visible;
+        opacity: 1;
+        color: var(--alternativo);
+    }
+    47% {
+        transform: translateX(-90vw);
+        visibility: hidden;
+        opacity: 0;
+        color: var(--secundario);
+    }
+    52.9% {
+        visibility: hidden;
+        opacity: 0;
+        color: var(--secundario);
+    }
+    53% {
+        transform: translateX(100vw);
+        visibility: visible;
+        opacity: 1;
+        color: var(--alternativo);
+    }
+    75% {
+        transform: translateX(50vw);
+    }
+    100% {
+        transform: translateX(0vw);
+    }
+}
+
 /** Tablets **/
 @media (min-width: 768px) {
     .codificador__botones {
@@ -150,6 +197,9 @@ header {
     .codificador__botones input {
         width: 50%;
     }
+    .marquee p {
+        animation: scrolling 20s linear infinite
+    }
 }
 
 /** Computadoras y portátiles **/
@@ -157,8 +207,10 @@ header {
     .contenedor {
         height: 100vh;
         display: grid;
-        grid-template-areas: "header main";
+        grid-template-areas: "header main"
+                             "footer footer";
         grid-template-columns: 8.8rem 1fr;
+        grid-template-rows: 97% 3%;
         padding: 4rem;
     }
     header {
@@ -212,5 +264,8 @@ header {
     }
     .resultado__logo-pc {
         display: block;
+    }
+    footer {
+        grid-area: footer;
     }
 }
