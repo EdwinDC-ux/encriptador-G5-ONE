@@ -114,6 +114,14 @@ header {
     background-color: transparent;
     border-radius: 2.4rem;
     color: var(--principal);
+    cursor: pointer;
+    outline: none;
+    outline-offset: 0;
+    transition: all 0.2s linear;
+}
+.codificador__botones input:hover {
+    outline: 2px solid var(--principal);
+    outline-offset: 3px;
 }
 .codificador__botones #encriptar{
     background-color: var(--principal);
@@ -178,10 +186,14 @@ header {
         height: auto;
     }
     .avisos {
-        display: none;
+        
+        visibility: hidden;
+        opacity: 0;
     }
     .codificador__informacion svg:hover + .avisos{
-        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.5s, opacity 0.5s linear;
     }
     .codificador__informacion,
     .codificador__botones {
