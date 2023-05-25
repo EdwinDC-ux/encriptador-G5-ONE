@@ -1,0 +1,216 @@
+:root {
+    --fuente: 'Inter';
+
+    --principal: #0A3871;
+    --secundario: #E5E5E5;
+    --encabezados: #343A40;
+    --blanco: #fff;
+    --alternativo: #495057;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*,*:before,*:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: var(--fuente);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/** Generales **/
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    background-color: var(--secundario);
+    padding: 2.4rem 1.6rem 4rem;
+}
+a {
+    text-decoration: none;
+}
+h2 {
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--encabezados);
+}
+p {
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--alternativo);
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+textarea:focus-visible {
+    outline: none;
+}
+
+/** Encabezado **/
+header {
+    margin-bottom: 2rem;
+}
+
+/** Contenido **/
+.entradas {
+    margin-bottom: 3rem;
+}
+.codificador__texto textarea {
+    min-height: 30rem;
+    height: auto;
+    font-family: var(--fuente);
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+}
+.codificador__texto textarea::placeholder {
+    font-family: var(--fuente);
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    color: var(--principal);
+}
+.codificador__informacion {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.avisos {
+    font-weight: 400;
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+}
+.codificador__botones {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.codificador__botones input {
+    border: 1px solid var(--principal);
+    padding: 2.4rem;
+    background-color: transparent;
+    border-radius: 2.4rem;
+    color: var(--principal);
+    cursor: pointer;
+    outline: none;
+    outline-offset: 0;
+    transition: all 0.2s linear;
+}
+.codificador__botones input:hover {
+    outline: 2px solid var(--principal);
+    outline-offset: 3px;
+}
+.codificador__botones #encriptar{
+    background-color: var(--principal);
+    color: var(--blanco);
+}
+.resultado {
+    background-color: var(--blanco);
+    padding: 3.2rem;
+    text-align: center;
+    margin: 0 0.8rem;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 3.2rem;
+}
+.resultado__logo-pc {
+    display: none;
+}
+.resultado__texto h2 {
+    margin-bottom: 1.6rem;
+}
+
+/** Tablets **/
+@media (min-width: 768px) {
+    .codificador__botones {
+        flex-direction: row;
+    }
+    .codificador__botones input {
+        width: 50%;
+    }
+}
+
+/** Computadoras y portátiles **/
+@media (min-width: 1200px) {
+    .contenedor {
+        height: 100vh;
+        display: grid;
+        grid-template-areas: "header main";
+        grid-template-columns: 8.8rem 1fr;
+        padding: 4rem;
+    }
+    header {
+        grid-area: header;
+        text-align: center;
+    }
+    main {
+        grid-area: main;
+        display: flex;
+        gap: 4rem;
+    }
+    .entradas {
+        margin: 0;
+        width: 100%;
+        margin: 0;
+        margin-top: 5rem;
+    }
+    .codificador {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 1fr 2rem auto;
+    }
+    .codificador__texto textarea {
+        min-height: 100%;
+        height: auto;
+    }
+    .avisos {
+        
+        visibility: hidden;
+        opacity: 0;
+    }
+    .codificador__informacion svg:hover + .avisos{
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.5s, opacity 0.5s linear;
+    }
+    .codificador__informacion,
+    .codificador__botones {
+        align-self: flex-end;
+    }
+    .codificador__botones input {
+        padding: 1.5rem;
+    }
+    .resultado {
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .resultado__logo-pc {
+        display: block;
+    }
+}
