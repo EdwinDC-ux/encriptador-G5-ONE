@@ -133,3 +133,13 @@ header {
 .resultado__texto h2 {
     margin-bottom: 1.6rem;
 }
+
+/** Tablets **/
+@media (min-width: 768px) {
+    .codificador__botones {
+        flex-direction: row;
+    }
+    .codificador__botones input {
+        width: 50%;
+    }
+}
