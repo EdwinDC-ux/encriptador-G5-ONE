@@ -4,3 +4,16 @@ const salidaTexto = (texto) => {
     salida.style = 'display:grid; grid-template-rows: 1fr auto; gap: 1rem;';
     salida.innerHTML = salidaCodificada;
 }
+
+
+function copiar () {
+    let copiar = document.getElementById('copiar');
+    copiar.addEventListener('click', eventoCopiar => {
+        let texto = document.getElementById('texto-codificado')
+
+        texto.select();
+        navigator.clipboard.writeText(texto.value).then(() => {
+            alert('Texto copiado');
+        });
+    });
+}

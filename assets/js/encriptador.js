@@ -1,4 +1,4 @@
-const validarInputVacio = texto => texto.length > 0
+const validarInputVacio = texto => texto.length > 0;
 
 function encriptarCadena (texto, letra = 4) {
     const reemplazos = ['ufat', 'ober', 'ai', 'imes', 'enter'];
@@ -33,6 +33,7 @@ window.addEventListener('load', event => {
         if (valido) {
             let textoEncriptado = encriptarCadena(texto.value);
             salidaTexto(textoEncriptado);
+            copiar();
         } else {
             alert('El mensaje a encriptar no es válido, ingrese otro.');
             texto.value = "";
@@ -52,6 +53,7 @@ window.addEventListener('load', event => {
         if (valido) {
             let textoDesencriptado = desencriptarCadena(texto.value);
             salidaTexto(textoDesencriptado);
+            copiar();
         } else {
             alert('El mensaje a desencriptar no es válido, ingrese otro.');
             texto.value = "";
